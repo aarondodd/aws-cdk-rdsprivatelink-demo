@@ -54,7 +54,9 @@ To use this demo, you need:
 
 ## Testing
 
-In the AWS account listed under "principals_to_share_with", you can create an EC2 instance that can route to the Endpoint you created and use the MySql cli to connect.
+**Connectivity**: In the AWS account listed under "principals_to_share_with", you can create an EC2 instance that can route to the Endpoint you created and use the MySql cli to connect.
+
+**Failover**: In the AWS console, reboot the RDS instance and choose "reboot with failover". Watch the target group's members in another tab and in a few minutes it should update to a new IP address.
 
 ## Enhancements
 

@@ -1,0 +1,398 @@
+{
+  "Resources": {
+    "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/Resource"
+      }
+    },
+    "PrivatelinkRdsDemoLambdaServiceRoleDefaultPolicy236E886B": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "elasticloadbalancing:DescribeTargetHealth",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "elasticloadbalancing:RegisterTargets",
+                "elasticloadbalancing:DeregisterTargets"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::ImportValue": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "PrivatelinkRdsDemoLambdaServiceRoleDefaultPolicy236E886B",
+        "Roles": [
+          {
+            "Ref": "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "PrivatelinkRdsDemoLambdaFF6103D2": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3Bucket1C3A5016"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "ELB_TG_ARN": {
+              "Fn::ImportValue": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7"
+            },
+            "TARGET_FQDN": {
+              "Fn::ImportValue": "PrivatelinkRdsDemoDb:ExportsOutputFnGetAttPrivatelinkRdsDemoDbE08698DFEndpointAddress6B6A9D54"
+            }
+          }
+        },
+        "Handler": "elb_hostname_as_target.lambda_handler",
+        "Runtime": "python3.7",
+        "Timeout": 45
+      },
+      "DependsOn": [
+        "PrivatelinkRdsDemoLambdaServiceRoleDefaultPolicy236E886B",
+        "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Resource",
+        "aws:asset:path": "asset.cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c.zip",
+        "aws:asset:property": "Code"
+      }
+    },
+    "PrivatelinkRdsDemoLambdaAllowInvokePrivatelinkRdsDemoSnsA3A3698F8AF235F4": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "PrivatelinkRdsDemoLambdaFF6103D2",
+            "Arn"
+          ]
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": {
+          "Fn::ImportValue": "PrivatelinkRdsDemoSns:ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/AllowInvoke:PrivatelinkRdsDemoSnsA3A3698F"
+      }
+    },
+    "PrivatelinkRdsDemoLambdaPrivatelinkRdsDemoSns10F25AEA": {
+      "Type": "AWS::SNS::Subscription",
+      "Properties": {
+        "Protocol": "lambda",
+        "TopicArn": {
+          "Fn::ImportValue": "PrivatelinkRdsDemoSns:ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272"
+        },
+        "Endpoint": {
+          "Fn::GetAtt": [
+            "PrivatelinkRdsDemoLambdaFF6103D2",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoSns/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAA02OwQrCMBBEv8V7ulaq4FERPIf6BTGNdbXZSDZBJOTfbSKip5lZ3g6zglW7hnaxU09u9HBfJu28gXQKSt/FntmE2Y5Io+gNu+i1EQdHHHzUQRwuJJVX1gTjS/ghF5qpAQM6yqJ0p0nZ86AgHSPpci7Mv5fGW2SuD6gspN5NtaiqdBPqV+Wqy4K7RpV5DHWlYOJ5djyz9vj4lv7nnLOQr3B1tOxgC5vFjREbHymgNdB/9A3FEqf4EAEAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoLambda/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Parameters": {
+    "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3Bucket1C3A5016": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c\""
+    },
+    "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c\""
+    },
+    "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cArtifactHash532A10BF": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c\""
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

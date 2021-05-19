@@ -1,0 +1,321 @@
+{
+  "Resources": {
+    "PrivbatelinkRdsDemoNlbD33A611F": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Name": "PrivatelinkRdsDemoNlb",
+        "Scheme": "internal",
+        "Subnets": [
+          {
+            "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCPrivateIngressSubnet1SubnetCC05DA8BDA28B2AC"
+          },
+          {
+            "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCPrivateIngressSubnet2Subnet0A75149D46617156"
+          }
+        ],
+        "Type": "network"
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/Resource"
+      }
+    },
+    "PrivbatelinkRdsDemoNlbMySql46AA251A": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "PrivatelinkRdsDemoTargetGroupFB64CEBE"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "PrivbatelinkRdsDemoNlbD33A611F"
+        },
+        "Port": 3306,
+        "Protocol": "TCP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/MySql/Resource"
+      }
+    },
+    "PrivatelinkRdsDemoTargetGroupFB64CEBE": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "HealthCheckEnabled": true,
+        "HealthCheckIntervalSeconds": 10,
+        "HealthCheckPort": "3306",
+        "HealthyThresholdCount": 2,
+        "Port": 3306,
+        "Protocol": "TCP",
+        "TargetGroupAttributes": [
+          {
+            "Key": "deregistration_delay.timeout_seconds",
+            "Value": "0"
+          }
+        ],
+        "TargetType": "ip",
+        "UnhealthyThresholdCount": 2,
+        "VpcId": {
+          "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCB9E5F0B4BD23A326"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoNlb/PrivatelinkRdsDemoTargetGroup/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAA1WMyw6CQAxFv4U9DOAjcWlk4caoQX9gHCpWsENmOhJD+HcZhURXvfectqlIk4VIgrVsbaSKKu6UNiC6E0tVhdmVDo4bx2GmybJxij3LwWpnFPg8iAIZNfWhfwG1tIyq1rK4yFqSQiqfM9HtgVttqt3ANx8Oxl//9WkHLQONfsqjO0tTAm+Ndo3XP7Xvw+OLb5riuViJZXC3iJFxxPgAkX/nGzYnH87tAAAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "PrivatelinkRdsDemoNlb/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Outputs": {
+    "Output": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "DNS ",
+            {
+              "Fn::GetAtt": [
+                "PrivbatelinkRdsDemoNlbD33A611F",
+                "DNSName"
+              ]
+            },
+            ", ARN: ",
+            {
+              "Ref": "PrivbatelinkRdsDemoNlbD33A611F"
+            },
+            " TG ARN: ",
+            {
+              "Ref": "PrivatelinkRdsDemoTargetGroupFB64CEBE"
+            }
+          ]
+        ]
+      }
+    },
+    "ExportsOutputRefPrivbatelinkRdsDemoNlbD33A611F2DA0AE16": {
+      "Value": {
+        "Ref": "PrivbatelinkRdsDemoNlbD33A611F"
+      },
+      "Export": {
+        "Name": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivbatelinkRdsDemoNlbD33A611F2DA0AE16"
+      }
+    },
+    "ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7": {
+      "Value": {
+        "Ref": "PrivatelinkRdsDemoTargetGroupFB64CEBE"
+      },
+      "Export": {
+        "Name": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7"
+      }
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

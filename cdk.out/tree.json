@@ -1,0 +1,1546 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoVpc": {
+        "id": "PrivatelinkRdsDemoVpc",
+        "path": "PrivatelinkRdsDemoVpc",
+        "children": {
+          "VPC": {
+            "id": "VPC",
+            "path": "PrivatelinkRdsDemoVpc/VPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoVpc/VPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "192.168.10.0/24",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "PrivatelinkRdsDemoVpc/VPC"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnVPC",
+                  "version": "1.104.0"
+                }
+              },
+              "PrivateIngressSubnet1": {
+                "id": "PrivateIngressSubnet1",
+                "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "192.168.10.0/28",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PrivateIngress"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCPrivateIngressSubnet1RouteTableA29B3C42"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCPrivateIngressSubnet1SubnetCC05DA8B"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                  "version": "1.104.0"
+                }
+              },
+              "PrivateIngressSubnet2": {
+                "id": "PrivateIngressSubnet2",
+                "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "192.168.10.16/28",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PrivateIngress"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCPrivateIngressSubnet2RouteTable89FCEBCC"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCPrivateIngressSubnet2Subnet0A75149D"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                  "version": "1.104.0"
+                }
+              },
+              "DBSubnet1": {
+                "id": "DBSubnet1",
+                "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "192.168.10.32/28",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "DB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCDBSubnet1RouteTableD25F5A48"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCDBSubnet1Subnet5E0CF118"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                  "version": "1.104.0"
+                }
+              },
+              "DBSubnet2": {
+                "id": "DBSubnet2",
+                "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "192.168.10.48/28",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "DB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "PrivatelinkRdsDemoVpc/VPC/DBSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCDBSubnet2RouteTable51E969F8"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCDBSubnet2SubnetDABA49CF"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-ec2.Vpc",
+              "version": "1.104.0"
+            }
+          },
+          "Output": {
+            "id": "Output",
+            "path": "PrivatelinkRdsDemoVpc/Output",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoVpc/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoVpc/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoVpc/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "PrivatelinkRdsDemoVpc/Exports",
+            "children": {
+              "Output{\"Ref\":\"VPCB9E5F0B4\"}": {
+                "id": "Output{\"Ref\":\"VPCB9E5F0B4\"}",
+                "path": "PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCB9E5F0B4\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCDBSubnet1Subnet5E0CF118\"}": {
+                "id": "Output{\"Ref\":\"VPCDBSubnet1Subnet5E0CF118\"}",
+                "path": "PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCDBSubnet1Subnet5E0CF118\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCDBSubnet2SubnetDABA49CF\"}": {
+                "id": "Output{\"Ref\":\"VPCDBSubnet2SubnetDABA49CF\"}",
+                "path": "PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCDBSubnet2SubnetDABA49CF\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCPrivateIngressSubnet1SubnetCC05DA8B\"}": {
+                "id": "Output{\"Ref\":\"VPCPrivateIngressSubnet1SubnetCC05DA8B\"}",
+                "path": "PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCPrivateIngressSubnet1SubnetCC05DA8B\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCPrivateIngressSubnet2Subnet0A75149D\"}": {
+                "id": "Output{\"Ref\":\"VPCPrivateIngressSubnet2Subnet0A75149D\"}",
+                "path": "PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCPrivateIngressSubnet2Subnet0A75149D\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoSns": {
+        "id": "PrivatelinkRdsDemoSns",
+        "path": "PrivatelinkRdsDemoSns",
+        "children": {
+          "PrivatelinkRdsDemoSns": {
+            "id": "PrivatelinkRdsDemoSns",
+            "path": "PrivatelinkRdsDemoSns/PrivatelinkRdsDemoSns",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoSns/PrivatelinkRdsDemoSns/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                  "aws:cdk:cloudformation:props": {
+                    "displayName": "RdsEventsTopicForSendingNotificationsAndTriggeringLambda"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-sns.CfnTopic",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sns.Topic",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoSns/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoSns/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoSns/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "PrivatelinkRdsDemoSns/Exports",
+            "children": {
+              "Output{\"Ref\":\"PrivatelinkRdsDemoSnsD76A36E1\"}": {
+                "id": "Output{\"Ref\":\"PrivatelinkRdsDemoSnsD76A36E1\"}",
+                "path": "PrivatelinkRdsDemoSns/Exports/Output{\"Ref\":\"PrivatelinkRdsDemoSnsD76A36E1\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoDb": {
+        "id": "PrivatelinkRdsDemoDb",
+        "path": "PrivatelinkRdsDemoDb",
+        "children": {
+          "PrivatelinkRdsDemoDbSg": {
+            "id": "PrivatelinkRdsDemoDbSg",
+            "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDbSg",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDbSg/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDbSg",
+                    "groupName": "PrivatelinkRdsDemoDbSg",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "192.168.10.0/24",
+                        "ipProtocol": "tcp",
+                        "fromPort": 3306,
+                        "toPort": 3306,
+                        "description": "from 192.168.10.0/24:3306"
+                      }
+                    ],
+                    "vpcId": {
+                      "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCB9E5F0B4BD23A326"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+              "version": "1.104.0"
+            }
+          },
+          "para-group-mysql": {
+            "id": "para-group-mysql",
+            "path": "PrivatelinkRdsDemoDb/para-group-mysql",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Resource",
+              "version": "1.104.0"
+            }
+          },
+          "PrivatelinkRdsDemoDb": {
+            "id": "PrivatelinkRdsDemoDb",
+            "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb",
+            "children": {
+              "SubnetGroup": {
+                "id": "SubnetGroup",
+                "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/SubnetGroup",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/SubnetGroup/Default",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "dbSubnetGroupDescription": "Subnet group for PrivatelinkRdsDemoDb database",
+                        "subnetIds": [
+                          {
+                            "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCDBSubnet1Subnet5E0CF118CB3D9039"
+                          },
+                          {
+                            "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCDBSubnet2SubnetDABA49CF0613452F"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-rds.CfnDBSubnetGroup",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.SubnetGroup",
+                  "version": "1.104.0"
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "Generated by the CDK for stack: ",
+                              {
+                                "Ref": "AWS::StackName"
+                              }
+                            ]
+                          ]
+                        },
+                        "generateSecretString": {
+                          "passwordLength": 30,
+                          "secretStringTemplate": "{\"username\":\"admin\"}",
+                          "generateStringKey": "password",
+                          "excludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-secretsmanager.CfnSecret",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "Attachment": {
+                    "id": "Attachment",
+                    "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret/Attachment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret/Attachment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
+                          "aws:cdk:cloudformation:props": {
+                            "secretId": {
+                              "Ref": "PrivatelinkRdsDemoDbSecret81902B22"
+                            },
+                            "targetId": {
+                              "Ref": "PrivatelinkRdsDemoDbE08698DF"
+                            },
+                            "targetType": "AWS::RDS::DBInstance"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-secretsmanager.CfnSecretTargetAttachment",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-secretsmanager.SecretTargetAttachment",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.DatabaseSecret",
+                  "version": "1.104.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                  "aws:cdk:cloudformation:props": {
+                    "dbInstanceClass": "db.t2.small",
+                    "allocatedStorage": "100",
+                    "backupRetentionPeriod": 7,
+                    "copyTagsToSnapshot": true,
+                    "dbParameterGroupName": "default.mysql5.7",
+                    "dbSubnetGroupName": {
+                      "Ref": "PrivatelinkRdsDemoDbSubnetGroup79C27E7E"
+                    },
+                    "deleteAutomatedBackups": false,
+                    "deletionProtection": false,
+                    "enableCloudwatchLogsExports": [
+                      "audit",
+                      "error",
+                      "general",
+                      "slowquery"
+                    ],
+                    "engine": "mysql",
+                    "engineVersion": "5.7.30",
+                    "masterUsername": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "PrivatelinkRdsDemoDbSecret81902B22"
+                          },
+                          ":SecretString:username::}}"
+                        ]
+                      ]
+                    },
+                    "masterUserPassword": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "PrivatelinkRdsDemoDbSecret81902B22"
+                          },
+                          ":SecretString:password::}}"
+                        ]
+                      ]
+                    },
+                    "multiAz": true,
+                    "publiclyAccessible": false,
+                    "storageType": "gp2",
+                    "vpcSecurityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "PrivatelinkRdsDemoDbSg2ED7C822",
+                          "GroupId"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.CfnDBInstance",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-rds.DatabaseInstance",
+              "version": "1.104.0"
+            }
+          },
+          "PrivatelinkRdsDemoEvent": {
+            "id": "PrivatelinkRdsDemoEvent",
+            "path": "PrivatelinkRdsDemoDb/PrivatelinkRdsDemoEvent",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::RDS::EventSubscription",
+              "aws:cdk:cloudformation:props": {
+                "snsTopicArn": {
+                  "Fn::ImportValue": "PrivatelinkRdsDemoSns:ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272"
+                },
+                "eventCategories": [
+                  "failover",
+                  "failure",
+                  "recovery",
+                  "maintenance"
+                ],
+                "sourceIds": [
+                  {
+                    "Ref": "PrivatelinkRdsDemoDbE08698DF"
+                  }
+                ],
+                "sourceType": "db-instance"
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-rds.CfnEventSubscription",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoDb/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoDb/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoDb/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "PrivatelinkRdsDemoDb/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"PrivatelinkRdsDemoDbE08698DF\",\"Endpoint.Address\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"PrivatelinkRdsDemoDbE08698DF\",\"Endpoint.Address\"]}",
+                "path": "PrivatelinkRdsDemoDb/Exports/Output{\"Fn::GetAtt\":[\"PrivatelinkRdsDemoDbE08698DF\",\"Endpoint.Address\"]}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoNlb": {
+        "id": "PrivatelinkRdsDemoNlb",
+        "path": "PrivatelinkRdsDemoNlb",
+        "children": {
+          "PrivbatelinkRdsDemoNlb": {
+            "id": "PrivbatelinkRdsDemoNlb",
+            "path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "loadBalancerAttributes": [
+                      {
+                        "key": "deletion_protection.enabled",
+                        "value": "false"
+                      }
+                    ],
+                    "name": "PrivatelinkRdsDemoNlb",
+                    "scheme": "internal",
+                    "subnets": [
+                      {
+                        "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCPrivateIngressSubnet1SubnetCC05DA8BDA28B2AC"
+                      },
+                      {
+                        "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCPrivateIngressSubnet2Subnet0A75149D46617156"
+                      }
+                    ],
+                    "type": "network"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "1.104.0"
+                }
+              },
+              "MySql": {
+                "id": "MySql",
+                "path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/MySql",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/MySql/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "PrivatelinkRdsDemoTargetGroupFB64CEBE"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "PrivbatelinkRdsDemoNlbD33A611F"
+                        },
+                        "port": 3306,
+                        "protocol": "TCP"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListener",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.NetworkListener",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-elasticloadbalancingv2.NetworkLoadBalancer",
+              "version": "1.104.0"
+            }
+          },
+          "PrivatelinkRdsDemoTargetGroup": {
+            "id": "PrivatelinkRdsDemoTargetGroup",
+            "path": "PrivatelinkRdsDemoNlb/PrivatelinkRdsDemoTargetGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoNlb/PrivatelinkRdsDemoTargetGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "healthCheckEnabled": true,
+                    "healthCheckIntervalSeconds": 10,
+                    "healthCheckPort": "3306",
+                    "healthyThresholdCount": 2,
+                    "port": 3306,
+                    "protocol": "TCP",
+                    "targetGroupAttributes": [
+                      {
+                        "key": "deregistration_delay.timeout_seconds",
+                        "value": "0"
+                      }
+                    ],
+                    "targetType": "ip",
+                    "unhealthyThresholdCount": 2,
+                    "vpcId": {
+                      "Fn::ImportValue": "PrivatelinkRdsDemoVpc:ExportsOutputRefVPCB9E5F0B4BD23A326"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnTargetGroup",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-elasticloadbalancingv2.NetworkTargetGroup",
+              "version": "1.104.0"
+            }
+          },
+          "Output": {
+            "id": "Output",
+            "path": "PrivatelinkRdsDemoNlb/Output",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoNlb/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoNlb/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoNlb/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "PrivatelinkRdsDemoNlb/Exports",
+            "children": {
+              "Output{\"Ref\":\"PrivbatelinkRdsDemoNlbD33A611F\"}": {
+                "id": "Output{\"Ref\":\"PrivbatelinkRdsDemoNlbD33A611F\"}",
+                "path": "PrivatelinkRdsDemoNlb/Exports/Output{\"Ref\":\"PrivbatelinkRdsDemoNlbD33A611F\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              },
+              "Output{\"Ref\":\"PrivatelinkRdsDemoTargetGroupFB64CEBE\"}": {
+                "id": "Output{\"Ref\":\"PrivatelinkRdsDemoTargetGroupFB64CEBE\"}",
+                "path": "PrivatelinkRdsDemoNlb/Exports/Output{\"Ref\":\"PrivatelinkRdsDemoTargetGroupFB64CEBE\"}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoVpcServiceEndpoint": {
+        "id": "PrivatelinkRdsDemoVpcServiceEndpoint",
+        "path": "PrivatelinkRdsDemoVpcServiceEndpoint",
+        "children": {
+          "PrivatelinkRdsDemoVpcEndpoint": {
+            "id": "PrivatelinkRdsDemoVpcEndpoint",
+            "path": "PrivatelinkRdsDemoVpcServiceEndpoint/PrivatelinkRdsDemoVpcEndpoint",
+            "children": {
+              "PrivatelinkRdsDemoVpcEndpoint": {
+                "id": "PrivatelinkRdsDemoVpcEndpoint",
+                "path": "PrivatelinkRdsDemoVpcServiceEndpoint/PrivatelinkRdsDemoVpcEndpoint/PrivatelinkRdsDemoVpcEndpoint",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCEndpointService",
+                  "aws:cdk:cloudformation:props": {
+                    "acceptanceRequired": false,
+                    "networkLoadBalancerArns": [
+                      {
+                        "Fn::ImportValue": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivbatelinkRdsDemoNlbD33A611F2DA0AE16"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnVPCEndpointService",
+                  "version": "1.104.0"
+                }
+              },
+              "Permissions": {
+                "id": "Permissions",
+                "path": "PrivatelinkRdsDemoVpcServiceEndpoint/PrivatelinkRdsDemoVpcEndpoint/Permissions",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCEndpointServicePermissions",
+                  "aws:cdk:cloudformation:props": {
+                    "serviceId": {
+                      "Ref": "PrivatelinkRdsDemoVpcEndpoint64DE41D5"
+                    },
+                    "allowedPrincipals": [
+                      "arn:aws:iam::903149740107:root",
+                      "arn:aws:iam::810829726401:root"
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnVPCEndpointServicePermissions",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-ec2.VpcEndpointService",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoVpcServiceEndpoint/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoVpcServiceEndpoint/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoVpcServiceEndpoint/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      },
+      "PrivatelinkRdsDemoLambda": {
+        "id": "PrivatelinkRdsDemoLambda",
+        "path": "PrivatelinkRdsDemoLambda",
+        "children": {
+          "PrivatelinkRdsDemoLambda": {
+            "id": "PrivatelinkRdsDemoLambda",
+            "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "elasticloadbalancing:DescribeTargetHealth",
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                },
+                                {
+                                  "Action": [
+                                    "elasticloadbalancing:RegisterTargets",
+                                    "elasticloadbalancing:DeregisterTargets"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::ImportValue": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "PrivatelinkRdsDemoLambdaServiceRoleDefaultPolicy236E886B",
+                            "roles": [
+                              {
+                                "Ref": "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                          "version": "1.104.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.Policy",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.104.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.AssetStaging",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-s3-assets.Asset",
+                  "version": "1.104.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3Bucket1C3A5016"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "ELB_TG_ARN": {
+                          "Fn::ImportValue": "PrivatelinkRdsDemoNlb:ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7"
+                        },
+                        "TARGET_FQDN": {
+                          "Fn::ImportValue": "PrivatelinkRdsDemoDb:ExportsOutputFnGetAttPrivatelinkRdsDemoDbE08698DFEndpointAddress6B6A9D54"
+                        }
+                      }
+                    },
+                    "handler": "elb_hostname_as_target.lambda_handler",
+                    "runtime": "python3.7",
+                    "timeout": 45
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.CfnFunction",
+                  "version": "1.104.0"
+                }
+              },
+              "AllowInvoke:PrivatelinkRdsDemoSnsA3A3698F": {
+                "id": "AllowInvoke:PrivatelinkRdsDemoSnsA3A3698F",
+                "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/AllowInvoke:PrivatelinkRdsDemoSnsA3A3698F",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                  "aws:cdk:cloudformation:props": {
+                    "action": "lambda:InvokeFunction",
+                    "functionName": {
+                      "Fn::GetAtt": [
+                        "PrivatelinkRdsDemoLambdaFF6103D2",
+                        "Arn"
+                      ]
+                    },
+                    "principal": "sns.amazonaws.com",
+                    "sourceArn": {
+                      "Fn::ImportValue": "PrivatelinkRdsDemoSns:ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.CfnPermission",
+                  "version": "1.104.0"
+                }
+              },
+              "PrivatelinkRdsDemoSns": {
+                "id": "PrivatelinkRdsDemoSns",
+                "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoSns",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoSns/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
+                      "aws:cdk:cloudformation:props": {
+                        "protocol": "lambda",
+                        "topicArn": {
+                          "Fn::ImportValue": "PrivatelinkRdsDemoSns:ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272"
+                        },
+                        "endpoint": {
+                          "Fn::GetAtt": [
+                            "PrivatelinkRdsDemoLambdaFF6103D2",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-sns.CfnSubscription",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-sns.Subscription",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-lambda.Function",
+              "version": "1.104.0"
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "PrivatelinkRdsDemoLambda/AssetParameters",
+            "children": {
+              "cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c": {
+                "id": "cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c",
+                "path": "PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/S3Bucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/S3VersionKey",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.104.0"
+                    }
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/ArtifactHash",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.104.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "PrivatelinkRdsDemoLambda/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "PrivatelinkRdsDemoLambda/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.104.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "PrivatelinkRdsDemoLambda/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.104.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.104.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.104.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.104.0"
+    }
+  }
+}

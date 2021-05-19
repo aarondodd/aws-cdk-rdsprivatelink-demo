@@ -1,0 +1,1338 @@
+{
+  "version": "11.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "PrivatelinkRdsDemoVpc": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoVpc.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/PrivatelinkRdsDemoVpc/VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCB9E5F0B4",
+            "trace": [
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:355:25)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet1SubnetCC05DA8B",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:679:24)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet1RouteTableA29B3C42",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:695:23)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet1RouteTableAssociation87A87217",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:700:9)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet2Subnet0A75149D",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:679:24)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet2RouteTable89FCEBCC",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:695:23)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/PrivateIngressSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateIngressSubnet2RouteTableAssociationD74BB633",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:700:9)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet1Subnet5E0CF118",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:679:24)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet1RouteTableD25F5A48",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:695:23)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet1RouteTableAssociationDC8481F9",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:700:9)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet2SubnetDABA49CF",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:679:24)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet2RouteTable51E969F8",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:695:23)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/VPC/DBSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDBSubnet2RouteTableAssociationF6FBF57B",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:700:9)",
+              "new PrivateSubnet (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:884:9)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:561:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:18)",
+              "new Vpc (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:14)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Output",
+            "trace": [
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCB9E5F0B4\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCB9E5F0B4BD23A326",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCDBSubnet1Subnet5E0CF118\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCDBSubnet1Subnet5E0CF118CB3D9039",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCDBSubnet2SubnetDABA49CF\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCDBSubnet2SubnetDABA49CF0613452F",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCPrivateIngressSubnet1SubnetCC05DA8B\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPrivateIngressSubnet1SubnetCC05DA8BDA28B2AC",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpc/Exports/Output{\"Ref\":\"VPCPrivateIngressSubnet2Subnet0A75149D\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPrivateIngressSubnet2Subnet0A75149D46617156",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoVpc"
+    },
+    "PrivatelinkRdsDemoSns": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoSns.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/PrivatelinkRdsDemoSns/PrivatelinkRdsDemoSns/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoSnsD76A36E1",
+            "trace": [
+              "new Topic (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-sns/lib/topic.js:45:26)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoSns/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoSns/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoSns/Exports/Output{\"Ref\":\"PrivatelinkRdsDemoSnsD76A36E1\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefPrivatelinkRdsDemoSnsD76A36E1A6AFB272",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoSns"
+    },
+    "PrivatelinkRdsDemoDb": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoDb.template.json",
+        "validateOnSynth": false
+      },
+      "dependencies": [
+        "PrivatelinkRdsDemoVpc",
+        "PrivatelinkRdsDemoSns"
+      ],
+      "metadata": {
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDbSg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoDbSg2ED7C822",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:213:30)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/SubnetGroup/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoDbSubnetGroup79C27E7E",
+            "trace": [
+              "new SubnetGroup (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/subnet-group.js:24:29)",
+              "new DatabaseInstanceNew (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:171:87)",
+              "new DatabaseInstanceSource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:275:9)",
+              "new DatabaseInstance (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:377:9)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoDbSecret81902B22",
+            "trace": [
+              "new Secret (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:196:26)",
+              "new DatabaseSecret (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/database-secret.js:23:9)",
+              "Object.renderCredentials (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/private/util.js:73:62)",
+              "new DatabaseInstance (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:378:36)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoDbSecretAttachment1A979036",
+            "trace": [
+              "new SecretTargetAttachment (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:420:28)",
+              "DatabaseSecret.attach (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:166:16)",
+              "new DatabaseInstance (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:396:34)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoDb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoDbE08698DF",
+            "trace": [
+              "new DatabaseInstance (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-rds/lib/instance.js:380:26)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/PrivatelinkRdsDemoEvent": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoEvent",
+            "trace": [
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoDb/Exports/Output{\"Fn::GetAtt\":[\"PrivatelinkRdsDemoDbE08698DF\",\"Endpoint.Address\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttPrivatelinkRdsDemoDbE08698DFEndpointAddress6B6A9D54",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoDb"
+    },
+    "PrivatelinkRdsDemoNlb": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoNlb.template.json",
+        "validateOnSynth": false
+      },
+      "dependencies": [
+        "PrivatelinkRdsDemoVpc"
+      ],
+      "metadata": {
+        "/PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivbatelinkRdsDemoNlbD33A611F",
+            "trace": [
+              "new BaseLoadBalancer (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-load-balancer.js:35:26)",
+              "new NetworkLoadBalancer (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:25:9)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/PrivbatelinkRdsDemoNlb/MySql/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivbatelinkRdsDemoNlbMySql46AA251A",
+            "trace": [
+              "new BaseListener (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:21:26)",
+              "new NetworkListener (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-listener.js:33:9)",
+              "NetworkLoadBalancer.addListener (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:84:16)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/PrivatelinkRdsDemoTargetGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoTargetGroupFB64CEBE",
+            "trace": [
+              "new TargetGroupBase (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:44:25)",
+              "new NetworkTargetGroup (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-target-group.js:24:9)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/Output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Output",
+            "trace": [
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/Exports/Output{\"Ref\":\"PrivbatelinkRdsDemoNlbD33A611F\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefPrivbatelinkRdsDemoNlbD33A611F2DA0AE16",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoNlb/Exports/Output{\"Ref\":\"PrivatelinkRdsDemoTargetGroupFB64CEBE\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefPrivatelinkRdsDemoTargetGroupFB64CEBED00A24D7",
+            "trace": [
+              "Stack.exportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:595:13)",
+              "createImportValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:138:39)",
+              "resolveValue (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:84:12)",
+              "Object.resolveReferences (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/refs.js:25:30)",
+              "Object.prepareApp (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/prepare-app.js:30:12)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:21:19)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoNlb"
+    },
+    "PrivatelinkRdsDemoVpcServiceEndpoint": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoVpcServiceEndpoint.template.json",
+        "validateOnSynth": false
+      },
+      "dependencies": [
+        "PrivatelinkRdsDemoNlb"
+      ],
+      "metadata": {
+        "/PrivatelinkRdsDemoVpcServiceEndpoint/PrivatelinkRdsDemoVpcEndpoint/PrivatelinkRdsDemoVpcEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoVpcEndpoint64DE41D5",
+            "trace": [
+              "new VpcEndpointService (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc-endpoint-service.js:32:32)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpcServiceEndpoint/PrivatelinkRdsDemoVpcEndpoint/Permissions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoVpcEndpointPermissions0A47D9D8",
+            "trace": [
+              "new VpcEndpointService (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-ec2/lib/vpc-endpoint-service.js:43:13)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpcServiceEndpoint/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoVpcServiceEndpoint/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoVpcServiceEndpoint"
+    },
+    "PrivatelinkRdsDemoLambda": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PrivatelinkRdsDemoLambda.template.json",
+        "validateOnSynth": false
+      },
+      "dependencies": [
+        "PrivatelinkRdsDemoNlb",
+        "PrivatelinkRdsDemoDb",
+        "PrivatelinkRdsDemoSns"
+      ],
+      "metadata": {
+        "/PrivatelinkRdsDemoLambda": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c.zip",
+              "id": "cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c",
+              "packaging": "file",
+              "sourceHash": "cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c",
+              "s3BucketParameter": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3Bucket1C3A5016",
+              "s3KeyParameter": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858",
+              "artifactHashParameter": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cArtifactHash532A10BF"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/construct-compat.js:405:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:175:29)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoLambdaServiceRoleFA03BAEA",
+            "trace": [
+              "new Role (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoLambdaServiceRoleDefaultPolicy236E886B",
+            "trace": [
+              "new Policy (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:95:23)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoLambdaFF6103D2",
+            "trace": [
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/AllowInvoke:PrivatelinkRdsDemoSnsA3A3698F": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoLambdaAllowInvokePrivatelinkRdsDemoSnsA3A3698F8AF235F4",
+            "trace": [
+              "Function.addPermission (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:40:9)",
+              "LambdaSubscription.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-sns-subscriptions/lib/lambda.js:36:17)",
+              "Topic.addSubscription (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-sns/lib/topic-base.js:22:49)",
+              "SnsEventSource.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda-event-sources/lib/sns.js:26:20)",
+              "Function.addEventSource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:166:16)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoLambda/PrivatelinkRdsDemoSns/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivatelinkRdsDemoLambdaPrivatelinkRdsDemoSns10F25AEA",
+            "trace": [
+              "new Subscription (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-sns/lib/subscription.js:39:9)",
+              "Topic.addSubscription (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-sns/lib/topic-base.js:33:9)",
+              "SnsEventSource.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda-event-sources/lib/sns.js:26:20)",
+              "Function.addEventSource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:166:16)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3Bucket1C3A5016",
+            "trace": [
+              "new FileAssetParameters (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cS3VersionKeyFD90E858",
+            "trace": [
+              "new FileAssetParameters (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/AssetParameters/cda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687c/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterscda5b817ca474aae500d8eaeab714c6b87570113421febaa36b38aa15c1e687cArtifactHash532A10BF",
+            "trace": [
+              "new FileAssetParameters (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+              "LegacyStackSynthesizer.addFileAsset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/tmp/tmp70urocr2/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp70urocr2/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp70urocr2/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ],
+        "/PrivatelinkRdsDemoLambda/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-DknV88/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/tmp/tmp70urocr2/lib/program.js:8582:24)",
+              "/tmp/tmp70urocr2/lib/program.js:7970:107",
+              "Kernel._ensureSync (/tmp/tmp70urocr2/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp70urocr2/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp70urocr2/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp70urocr2/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/tmp/tmp70urocr2/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:463:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "PrivatelinkRdsDemoLambda"
+    }
+  }
+}
