@@ -3,6 +3,10 @@
 
 This demo shows how to leverage AWS Privatelink to publish a Relational Database Service (RDS) database from one account to other accounts. This method allows for point-to-point connectivity between accounts without relying on routing subnets. It leverages a Lambda function to keep the Privatelink's associated Network Load Balancer (NLB) updated with the RDS endpoint which is triggered whenever the RDS cluster enters a failover state.
 
+Reasons this demo was created:
+1. A use case was presented where routing between VPCs was not allowed and the database team and application team were in separate accounts. This enabled the resources to remain where they were but still be connected.
+2. Another use case where the application and database were in separate VPCs that had overlapping CIDR blocks. This meant VPC peering could not be used (not without some fancy NATing). This architecture does not rely on routing so enabled communication between the application and database.
+
 Note: check the AWS documentation for NLB features. As of publishing this demo, an NLB only supports an EC2 instance or IP address as targets, hence the need for the associated Lambda function. Should NLB ever support DNS entries as targets, the Lambda won't be needed.
 
 Running this CDK code generates the left side of the below architecture diagram.
@@ -14,8 +18,17 @@ This demo creates the following:
 2. An RDS MySQL multi-availability zone cluster
 3. A Simple Notification Service (SNS) topic for receiving RDS failover events
 4. An RDS event subscription filtered by failover notices and published to the SNS topic
-5. An NLB and asociated Privatelink (aka VPC Endpoint Service) endpoint
+5. An NLB and associated PrivateLink (aka VPC Endpoint Service) endpoint
 6. A Lambda function, triggered by SNS, that resolves the RDS endpoint DNS name to the IP address of the active instance and updates the NLB's target group accordingly
+
+**Terms to be aware of**
+- VPC Endpoint Service: This is the AWS Console and CDK name for a PrivateLink connection. In the console, you'll see this under VPC / Endpoint Services. An Endpoint Service is what you create to share out. Endpoint Services need an associated NLB.
+- VPC Endpoint: This is where you create an endpoint to use, as opposed to above for sharing. An Endpoint can be to an AWS service (such as to access S3 or other services without Internet access in your VPC) or a custom share you've been granted permission to use, such as in this demo.
+
+**Caveats / limitations**
+- This code is as-is and is not endorsed or supported by AWS or anyone. Use at your own risk.
+- The AWS NLB also has a start delay on performing a health check on targets. This doesn't appear to be configurable and can added a minute or so until traffic is directed to the new IP. This means, using RDS natively, a failover may take ~30 seconds to be active but in this architecture, may take a few minutes.
+- Your RDS, PrivateLink, and the consuming accounts must be in the same region and same underlying AWS Availability Zones. Ensure you have subnets in the consuming accounts with the same AZ-IDs (check the AWS Console / Subnets and column Availability Zone ID).
 
 ## Pre-requisites
 
@@ -42,3 +55,10 @@ To use this demo, you need:
 ## Testing
 
 In the AWS account listed under "principals_to_share_with", you can create an EC2 instance that can route to the Endpoint you created and use the MySql cli to connect.
+
+## Enhancements
+
+Below are ideas for taking this further, especially if production-izing:
+1. Instead of using "allowed_principals" in the privatelink_stack.py and specifying an array principals, leverage AWS Resource Access Manager (RAM) and share with an AWS Organization or OU.
+2. Move the props dictionary to AWS Systems Manager (SSM) Parameter Store or at least source from a separately managed configuration file so adding/removing shared accounts doesn't requiring editing the core stack.
+3. Create a multi-account CDK and a stack to create the endpoint in the consumer account.
